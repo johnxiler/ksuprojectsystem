@@ -1,0 +1,98 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Faculty Evaluation System</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="{% static 'plugins/fontawesome/js/all.min.js'%}"></script>
+    
+    <!-- App CSS -->
+    <link id="theme-style" rel="stylesheet" href="{% static 'css/portal.css' %}">
+
+</head> 
+<div id="app-sidepanel" class="app-sidepanel"> 
+    <div id="sidepanel-drop" class="sidepanel-drop"></div>
+    <div class="sidepanel-inner d-flex flex-column">
+        <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
+        <div class="app-branding">
+            <a class="app-logo" href="{% url 'dashboard' %}"><i class="fa fa-graduation-cap fa-2x"></i><span class="logo-text"> KSU | ADMIN</span></a>
+
+        </div><!--//app-branding-->  
+        
+        <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
+           <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link" href="{% url 'dashboard' %}">
+                        <span class="nav-icon"><i class="fa fa-home"></i></span>
+                         <span class="nav-link-text">Dashboard</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
+                {% comment %} <li class="nav-item has-submenu">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-2" aria-expanded="false" aria-controls="submenu-2">
+                        <span class="nav-icon"><i class="fa fa-users"></i></span>
+                         <span class="nav-link-text">Student</span>
+                         <span class="submenu-arrow"><i class="fa fa-angle-down"></i></span><!--//submenu-arrow-->
+                    </a><!--//nav-link-->
+                    <div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
+                        <ul class="submenu-list list-unstyled">
+                            <li class="submenu-item"><a class="submenu-link" href="{% url 'add_student'%}">Add Student</a></li>
+                            <li class="submenu-item"><a class="submenu-link" href="{% url 'manage_student'%}">Manage Student</a></li>
+                        </ul>
+                    </div>
+                </li><!--//nav-item-->
+                <li class="nav-item has-submenu"> {% endcomment %}
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    {% comment %} <a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-3" aria-expanded="false" aria-controls="submenu-3">
+                        <span class="nav-icon"><i class="fa fa-school"></i></span>
+                         <span class="nav-link-text">Class</span>
+                         <span class="submenu-arrow"><i class="fa fa-angle-down"></i></span><!--//submenu-arrow-->
+                    </a><!--//nav-link-->
+                    <div id="submenu-3" class="collapse submenu submenu-3" data-parent="#menu-accordion">
+                        <ul class="submenu-list list-unstyled">
+                            <li class="submenu-item"><a class="submenu-link" href="{% url 'add_class' %}">Add Class</a></li>
+                            <li class="submenu-item"><a class="submenu-link" href="{% url 'manage_class' %}">Manage Class</a></li>
+                        </ul>
+                    </div>
+                </li><!--//nav-item-->
+                <li class="nav-item has-submenu">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-5" aria-expanded="false" aria-controls="submenu-5">
+                        <span class="nav-icon"><i class="fa fa-question"></i></span>
+                         <span class="nav-link-text">Questionaires</span>
+                         <span class="submenu-arrow"><i class="fa fa-angle-down"></i></span><!--//submenu-arrow-->
+                    </a><!--//nav-link-->
+                    <div id="submenu-5" class="collapse submenu submenu-5" data-parent="#menu-accordion">
+                        <ul class="submenu-list list-unstyled">
+                            <li class="submenu-item"><a class="submenu-link" href="category.html">Manage Category</a></li>
+                            <li class="submenu-item"><a class="submenu-link" href="#">Manage Questionaire</a></li>
+                        </ul>
+                    </div>
+                </li><!--//nav-item--> {% endcomment %}
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    <a class="nav-link" href="{% url 'evaluation_list' %}">
+                        <span class="nav-icon"><i class="fa fa-table"></i></span>
+                         <span class="nav-link-text">Evaluation</span>
+                    </a><!--//nav-link-->
+                </li><!--//nav-item-->
+                <li class="nav-item">
+                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                    {% comment %} <a class="nav-link" href="comments.html">
+                        <span class="nav-icon"><i class="fa fa-comments"></i></span>
+                         <span class="nav-link-text">Comments</span>
+                    </a><!--//nav-link--> {% endcomment %}
+                </li><!--//nav-item-->
+            </ul><!--//app-menu-->
+        </nav><!--//app-nav-->
+    </div><!--//sidepanel-inner-->
+</div><!--//app-sidepanel-->
+</header><!--//app-header-->

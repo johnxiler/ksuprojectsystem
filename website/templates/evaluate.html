@@ -1,0 +1,179 @@
+{% comment %} {% load static%}
+
+<body class="app">  {% endcomment %}
+    {% comment %} {% include '__bits\_navbar.html'%} {% endcomment %}
+    {% comment %} {% include '__bits\_studentsidebar.html'%}
+    {%block content %}
+    <div class="app-wrapper">
+	    
+	    <div class="app-content pt-3 p-md-3 p-lg-4">
+		    <div class="container-xl">
+			    <img src="{% static 'images/ksuniversity.png' %}" alt="lol" style="width: 125px;">
+			    <h1 class="app-page-title"><span class="nav-icon"><i class="fa fa-file"></i></span> KSU Faculty Evaluation Survey</h1>
+			    <div class="row g-4 mb-4">
+	                <div class="col-12 col-md-12">
+		                <div class="app-card app-card-settings shadow-sm p-4">
+						    <div class="app-card-body">
+							    <form method="post">
+                                    {% csrf_token %}
+									<div class="mb-3">
+									    <label for="setting-input-2" class="form-label"><h4>Faculty Name</h4></label>
+									  
+                                            <div class= 'rating-container'>
+                                              <label for="id_faculty_Lname">Last Name:</label>
+                                              {{form.faculty_Lname}}
+                                          </div>
+                                            <div class= 'rating-container'>
+                                                <label for="id_faculty_Fname">First Name:</label>
+                                                {{form.faculty_Fname}}
+                                            </div>
+                                              <div class= 'rating-container'>
+                                                <label for="id_faculty_Mname">Middle Name:</label>
+                                                {{form.faculty_Mname}}
+                                            </div>
+                                            <div class= 'rating-container'>
+                                              <label for="id_faculty_rank">Rank:</label>
+                                              {{form.faculty_rank}}
+                                            </div>
+                                    
+						       </div><!--//app-card-body-->
+						</div><!--//app-card-->
+	                </div>
+	                <div class="col-12 col-md-12">
+		                <div class="app-card app-card-settings shadow-sm p-4">
+						    <div class="app-card-body">
+                                <hr>
+    <h4>Course</h4>
+    <div class= 'rating-container'>
+        <label for="id_course_title">Course title:</label>
+        {{form.course_title}}
+    </div>
+    <div class= 'rating-container'>
+      <label for="id_subject_title">Subject:</label>
+      {{form.subject_title}}
+  </div>
+    <div class= 'rating-container'>
+        <label for="id_semester">Semester:</label>
+        {{form.semester}}
+    </div>
+    <hr>
+    <div class= 'rating-container'>
+        <label for="id_year">Year:</label>
+        {{form.year}}
+    </div>
+    <br>
+    
+    <div class= 'rating-container'>
+        <label for="id_evaluator">Evaluator:</label>
+        {{form.evaluator}}
+    </div>
+   <br>
+    <fieldset class="border border-info p-2 w-100">
+        <legend  class="w-auto">Rating Legend</legend>
+        <p>5 = Strongly Agree, 4 = Agree, 3 = Uncertain, 2 = Disagree, 1 = Strongly Disagree</p>
+     </fieldset><br> {% endcomment %}
+     {% comment %} <fieldset class="border border-info p-2 w-100"> {% endcomment %}
+    {% comment %} <label for="setting-input-2" class="form-label bg-info">Category</label>
+    <hr>                      
+    <p>1. How well did the faculty member communicate the course objectives and expectations at the beginning of the course?</p>
+     <div>
+      {% for radio in form.communication %}
+            {{ radio }}
+          {% endfor %} {% endcomment %}
+    {% comment %} {{form.communication}} {% endcomment %}
+     {% comment %} </div>
+     <p>2. How effective was the faculty member in delivering the course material and explaining complex concepts?</p>
+     <div>
+      {% for radio in form.delivery %}
+            {{ radio }}
+          {% endfor %} {% endcomment %}
+        {% comment %} {{form.delivery}} {% endcomment %}
+     {% comment %} </div>
+     <p>3.How well did the faculty member engage with the students during the course?</p>
+     <div>
+      {% for radio in form.engagement %}
+            {{ radio }}
+          {% endfor %} {% endcomment %}
+        {% comment %} {{form.engagement}} {% endcomment %}
+     {% comment %} </div>
+     <p>4.Did the faculty member respond to student questions and concerns in a timely manner?</p>
+     <div>
+      {% for radio in form.responsiveness %}
+            {{ radio }}
+          {% endfor %} {% endcomment %}
+        {% comment %} {{form.responsiveness}} {% endcomment %}
+     {% comment %} </div>
+     <p>5.Did the faculty member provide helpful feedback on assignments and exams in a timely manner?</p>
+     <div>
+      {% for radio in form.feedback %}
+            {{ radio }}
+          {% endfor %} {% endcomment %}
+        {% comment %} {{form.feedback}} {% endcomment %}
+     {% comment %} </div>
+     <p>6.Did the faculty member create a welcoming and inclusive classroom environment?</p>
+     <div>
+      {% for radio in form.inclusiveness %}
+            {{ radio }}
+          {% endfor %} {% endcomment %}
+        {% comment %} {{form.inclusiveness}} {% endcomment %}
+     {% comment %} </div>
+     <p>7. Did the faculty member effectively use technology in the course?</p>
+     <div>
+      {% for radio in form.technology %}
+            {{ radio }}
+          {% endfor %} {% endcomment %}
+        {% comment %} {{form.technology}} {% endcomment %}
+     {% comment %} </div>
+     <p>8. Did the faculty member promote critical thinking and intellectual curiosity among students?</p>
+     <div>
+      {% for radio in form.critical_thinking %}
+            {{ radio }}
+          {% endfor %} {% endcomment %}
+        {% comment %} {{form.critical_thinking}} {% endcomment %}
+     {% comment %} </div>
+     <p>9. Did the faculty member effectively challenge and motivate students to learn?</p>
+     <div>
+      {% for radio in form.motivation %}
+            {{ radio }}
+          {% endfor %} {% endcomment %}
+        {% comment %} {{form.motivation}} {% endcomment %}
+     {% comment %} </div>
+     <p>10. Overall, how satisfied were you with the faculty member's performance in the course?</p>
+     <div>
+      {% for radio in form.satisfaction %}
+            {{ radio }}
+          {% endfor %} {% comment %} note: this for loop displays radio button horizontally {% comment %} {% endcomment %}
+        {% comment %} {{form.satisfaction}} {% endcomment %}
+     {% comment %} </div>
+     <hr>
+     &nbsp
+     <div class= 'rating-container'>
+        <p><label for="id_comments">Comments:</label></p>
+        {{form.comments}}
+     </div>
+     <button style="color:white; border-radius:10%; background-color: black;" type="submit">Submit</button>
+    </form>
+						    </div><!--//app-card-body-->
+						    
+						</div><!--//app-card-->
+	                </div>
+			    </div><!--//row-->
+		    </div><!--//container-fluid-->
+	    </div><!--//app-content-->
+	    
+    </div><!--//app-wrapper-->    					
+
+ 
+    <!-- Javascript -->          
+    <script src="{% static 'plugins/popper.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>  
+
+    <!-- Charts JS -->
+    <script src="{% static 'plugins/chart.js/chart.min.js' %}"></script> 
+    <script src="{% static 'js/index-charts.js' %}"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="{% static 'assets/js/app.js' %}"></script> 
+{% endblock %}
+</body>
+</html>  {% endcomment %}
